@@ -416,7 +416,7 @@ class Imageupload
                 $input[$key.'_'.$k] = $v;
             }
         }
-
+        unset($input['exif']);//fixbug SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
         return $model->firstOrCreate($input);
     }
 
